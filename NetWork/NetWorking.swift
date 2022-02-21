@@ -9,7 +9,10 @@ import Foundation
 import Network
 import CoreGraphics
 
+import RaaNWUtils
+import RaaA0_ClientServerData
 
+//	//	//	//	//	//	//	//
 
 var udp = MyUDP()
 
@@ -40,10 +43,10 @@ final class MyUDP: ObservableObject {
 	}
 	
 	private func setupStateHandler() {
-		connection.stateUpdateHandler = { (newState) in
+		connection.stateUpdateHandler = { [weak self] (newState) in
+			guard let self = self else {return}
 			DispatchQueue.main.async {
-				weak var thisOne = self
-				thisOne?.state = newState
+				self.state = newState
 			}
 		}
 	}
@@ -53,7 +56,7 @@ final class MyUDP: ObservableObject {
 	}
 	
 	func pushDataToSender(data: Data?) {
-		sendData(data, on: connection){endpoint,error in
+		sendData(data, on: connection){ (endpoint,error) in
 			if let error = error {
 				print("\n\ncontentProcessed with error:")
 				print(error)
@@ -62,7 +65,8 @@ final class MyUDP: ObservableObject {
 	}
 	
 	private func setupReceiver() {
-		receiveData(on: connection){endpoint,data,error in
+		receiveData(on: connection){[weak self] (endpoint,data,error) in
+			guard let self = self else {return}
 			guard let data = data else {return}
 			resultDBG = MainCoder.decode(String.self, from: data)
 			print(".. message: \(String(describing: resultDBG))")

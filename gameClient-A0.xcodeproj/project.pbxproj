@@ -15,8 +15,8 @@
 		AF601C6927ACB3E800F44C4B /* JoyStickNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF601C6827ACB3E800F44C4B /* JoyStickNode.swift */; };
 		AF601C7127ACC50000F44C4B /* NetWorking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF601C7027ACC50000F44C4B /* NetWorking.swift */; };
 		AF601C7327AD21B900F44C4B /* ButtonSetNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF601C7227AD21B900F44C4B /* ButtonSetNode.swift */; };
-		AF601C7727AD291500F44C4B /* exchangedTypes_A0.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF601C7627AD291500F44C4B /* exchangedTypes_A0.swift */; };
-		AF601C7927AD292600F44C4B /* NWUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF601C7827AD292600F44C4B /* NWUtils.swift */; };
+		AF8C2AC927C3A523009CD0C2 /* RaaNWUtils in Frameworks */ = {isa = PBXBuildFile; productRef = AF8C2AC827C3A523009CD0C2 /* RaaNWUtils */; };
+		AF8C2ACF27C3AB15009CD0C2 /* RaaA0_ClientServerData in Frameworks */ = {isa = PBXBuildFile; productRef = AF8C2ACE27C3AB15009CD0C2 /* RaaA0_ClientServerData */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +29,6 @@
 		AF601C6827ACB3E800F44C4B /* JoyStickNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoyStickNode.swift; sourceTree = "<group>"; };
 		AF601C7027ACC50000F44C4B /* NetWorking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorking.swift; sourceTree = "<group>"; };
 		AF601C7227AD21B900F44C4B /* ButtonSetNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSetNode.swift; sourceTree = "<group>"; };
-		AF601C7627AD291500F44C4B /* exchangedTypes_A0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = exchangedTypes_A0.swift; path = ../RAAlibs/sharedSwiftTypes/exchangedTypes_A0.swift; sourceTree = "<group>"; };
-		AF601C7827AD292600F44C4B /* NWUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NWUtils.swift; path = ../RAAlibs/swifting/NWUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF8C2ACF27C3AB15009CD0C2 /* RaaA0_ClientServerData in Frameworks */,
+				AF8C2AC927C3A523009CD0C2 /* RaaNWUtils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,7 +49,6 @@
 			children = (
 				AF601C5727AC968400F44C4B /* gameClient-A0 */,
 				AF601C6A27ACC45300F44C4B /* NetWork */,
-				AF601C6D27ACC48D00F44C4B /* external */,
 				AF601C5627AC968400F44C4B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,15 +91,6 @@
 			path = NetWork;
 			sourceTree = "<group>";
 		};
-		AF601C6D27ACC48D00F44C4B /* external */ = {
-			isa = PBXGroup;
-			children = (
-				AF601C7827AD292600F44C4B /* NWUtils.swift */,
-				AF601C7627AD291500F44C4B /* exchangedTypes_A0.swift */,
-			);
-			name = external;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -117,6 +107,10 @@
 			dependencies = (
 			);
 			name = "gameClient-A0";
+			packageProductDependencies = (
+				AF8C2AC827C3A523009CD0C2 /* RaaNWUtils */,
+				AF8C2ACE27C3AB15009CD0C2 /* RaaA0_ClientServerData */,
+			);
 			productName = "gameClient-A0";
 			productReference = AF601C5527AC968400F44C4B /* gameClient-A0.app */;
 			productType = "com.apple.product-type.application";
@@ -145,6 +139,10 @@
 				Base,
 			);
 			mainGroup = AF601C4C27AC968400F44C4B;
+			packageReferences = (
+				AF8C2AC727C3A523009CD0C2 /* XCRemoteSwiftPackageReference "RaaNWUtils" */,
+				AF8C2ACD27C3AB15009CD0C2 /* XCRemoteSwiftPackageReference "RaaA0_ClientServerData" */,
+			);
 			productRefGroup = AF601C5627AC968400F44C4B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -171,13 +169,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF601C7727AD291500F44C4B /* exchangedTypes_A0.swift in Sources */,
 				AF601C6727AC987900F44C4B /* GameScene.swift in Sources */,
 				AF601C7327AD21B900F44C4B /* ButtonSetNode.swift in Sources */,
 				AF601C7127ACC50000F44C4B /* NetWorking.swift in Sources */,
 				AF601C5B27AC968400F44C4B /* ContentView.swift in Sources */,
 				AF601C5927AC968400F44C4B /* gameClient_A0App.swift in Sources */,
-				AF601C7927AD292600F44C4B /* NWUtils.swift in Sources */,
 				AF601C6927ACB3E800F44C4B /* JoyStickNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,6 +379,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AF8C2AC727C3A523009CD0C2 /* XCRemoteSwiftPackageReference "RaaNWUtils" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AlexanderARodin/RaaNWUtils";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		AF8C2ACD27C3AB15009CD0C2 /* XCRemoteSwiftPackageReference "RaaA0_ClientServerData" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AlexanderARodin/RaaA0_ClientServerData";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AF8C2AC827C3A523009CD0C2 /* RaaNWUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF8C2AC727C3A523009CD0C2 /* XCRemoteSwiftPackageReference "RaaNWUtils" */;
+			productName = RaaNWUtils;
+		};
+		AF8C2ACE27C3AB15009CD0C2 /* RaaA0_ClientServerData */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF8C2ACD27C3AB15009CD0C2 /* XCRemoteSwiftPackageReference "RaaA0_ClientServerData" */;
+			productName = RaaA0_ClientServerData;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AF601C4D27AC968400F44C4B /* Project object */;
 }
