@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "RaaA0_ClientServerData",
+        "repositoryURL": "https://github.com/AlexanderARodin/RaaA0_ClientServerData",
+        "state": {
+          "branch": "main",
+          "revision": "e47e5d3a3a06ec553ffce17e10269b0e01d71c12",
+          "version": null
+        }
+      },
+      {
+        "package": "RaaNWUtils",
+        "repositoryURL": "https://github.com/AlexanderARodin/RaaNWUtils",
+        "state": {
+          "branch": "main",
+          "revision": "05aef97db8114e96a1b13efbac351f895086a777",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
