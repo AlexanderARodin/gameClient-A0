@@ -18,6 +18,14 @@ struct ContentView: View {
 			ZStack {
 				getSpriteView(geometry: geometry)
 				VStack {
+					TextField("player name", text: $udpLink.playerName)
+						.padding()
+						.font(.largeTitle)
+						.frame(width: geometry.size.width / 3.5)
+						.border(.red)
+						.padding()
+						.foregroundColor(.accentColor)
+					Spacer()
 					TextEditor(text: $gameScene.dbgText)
 						.font(.footnote)
 						.frame(width: geometry.size.width / 3.5, height: geometry.size.height / 1.7)
@@ -25,13 +33,6 @@ struct ContentView: View {
 						udp.requestDBG()
 					}
 					.padding()
-					Spacer()
-					TextField("player name", text: $udpLink.playerName)
-						.padding()
-						.font(.largeTitle)
-						.frame(width: geometry.size.width / 3.5)
-						.border(.red)
-						.padding()
 				}
 			}
 		}
